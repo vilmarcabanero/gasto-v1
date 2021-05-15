@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import NewExpense from '../components/NewExpense/NewExpense'
-import Expenses from '../components/Expenses/Expenses'
+import NewExpense from '../components/Max/NewExpense/NewExpense'
+import Expenses from '../components/Max/Expenses/Expenses'
 
 const MainPage = () => {
 	const [expenses, setExpenses] = useState(DUMMY_EXPENSES)

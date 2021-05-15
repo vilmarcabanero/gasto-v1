@@ -3,7 +3,10 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
 // Pages
-import MainPage from './pages/Main'
+import Main from './pages/Max'
+import Max from './pages/Max'
+import Traversy from './pages/Traversy'
+import Indian from './pages/Indian'
 // import LoginPage from './pages/Login'
 // import RegisterPage from './pages/Register'
 
@@ -12,9 +15,11 @@ const Routes = () => {
 	return (
 		<AnimatePresence exitBeforeEnter>
 			<Switch location={location} key={location.pathname}>
-				= <Route exact path='/' component={MainPage} />
-				{/* <Route exact path='/login' component={LoginPage} />
-				<Route exact path='/register' component={RegisterPage} /> */}
+			<Route exact path='/' component={Main} />
+				<Route exact path='/max' component={Max} />
+				
+				<Route exact path='/traversy' component={Traversy} />
+				<Route exact path='/indian' component={Indian} />
 			</Switch>
 		</AnimatePresence>
 	)
