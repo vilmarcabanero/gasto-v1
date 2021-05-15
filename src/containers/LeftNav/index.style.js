@@ -16,7 +16,7 @@ export const Container = styled.div`
 	padding-top: 4rem;
 	/* background-color: rgba(0, 0, 0, 0.7); */
 	/* background-color: ${props => props.theme.headerBackground}; */
-	background-color: black;
+	background-color: rgba(4, 11, 20, 1);
 	
 
 	transition: all ease-in-out 0.5s;
