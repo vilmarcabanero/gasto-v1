@@ -1,13 +1,12 @@
+import './App.css'
+import Routes from './Routes'
 
-import './App.css';
-import NewExpense from './components/NewExpense'
-
-function App() {
-  return (
-    <div>
-      <NewExpense/>
-    </div>
-  );
+const App = () => {
+	return (
+		<div>
+			<Routes />
+		</div>
+	)
 }
 
-export default App;
+export default App
