@@ -1,5 +1,5 @@
 import ExpenseTracker from '../components/Indian/ExpenseTracker';
-import '../App.css'
+import './Indian.css'
 import { motion } from 'framer-motion'
 
 const IndianPage = () => {

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import NewExpense from '../components/Max/NewExpense/NewExpense'
 import Expenses from '../components/Max/Expenses/Expenses'
 
-const MainPage = () => {
+const MaxPage = () => {
 	const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 	const addExpenseHandler = expense => {
 		setExpenses(prevExpenses => {
@@ -45,4 +45,4 @@ const DUMMY_EXPENSES = [
 	},
 ]
 
-export default MainPage
+export default MaxPage

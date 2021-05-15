@@ -6,7 +6,7 @@ import { IncomeExpenses } from '../components/Traversy/IncomeExpenses'
 import { TransactionList } from '../components/Traversy/TransactionList'
 import { AddTransaction } from '../components/Traversy/AddTransaction'
 import { GlobalProvider } from '../context/GlobalState'
-import '../App.css'
+import './Traversy.css'
 
 const Traversy = () => {
 	return (
@@ -17,13 +17,15 @@ const Traversy = () => {
 			transition={{ duration: 0.5 }}
 		>
 			<GlobalProvider>
-				<Header />
-				<div className='container'>
-					<Balance />
-					<IncomeExpenses />
-					<TransactionList />
-					<AddTransaction />
-				</div>
+				<main className='body'>
+					<Header />
+					<div className='container'>
+						<Balance />
+						<IncomeExpenses />
+						<TransactionList />
+						<AddTransaction />
+					</div>
+				</main>
 			</GlobalProvider>
 		</motion.div>
 	)

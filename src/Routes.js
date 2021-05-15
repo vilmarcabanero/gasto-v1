@@ -3,7 +3,7 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
 // Pages
-import Main from './pages/Max'
+import Main from './pages/Main'
 import Max from './pages/Max'
 import Traversy from './pages/Traversy'
 import Indian from './pages/Indian'
