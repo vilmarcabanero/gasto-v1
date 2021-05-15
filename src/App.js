@@ -1,10 +1,11 @@
 
 import './App.css';
+import NewExpense from './components/NewExpense'
 
 function App() {
   return (
     <div>
-      <h1>Gasto</h1>
+      <NewExpense/>
     </div>
   );
 }
