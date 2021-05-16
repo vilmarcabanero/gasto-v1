@@ -4,7 +4,7 @@ import NewExpense from '../components/Max/NewExpense/NewExpense'
 import Expenses from '../components/Max/Expenses/Expenses'
 
 const MaxPage = () => {
-	const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+	const [expenses, setExpenses] = useState([])
 	const addExpenseHandler = expense => {
 		setExpenses(prevExpenses => {
 			return [expense, ...prevExpenses]

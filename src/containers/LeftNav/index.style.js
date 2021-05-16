@@ -13,10 +13,9 @@ export const Container = styled.div`
 	width: 250px;
 	color: white;
 	padding: 1rem;
-	padding-top: 4rem;
 	/* background-color: rgba(0, 0, 0, 0.7); */
 	/* background-color: ${props => props.theme.headerBackground}; */
-	background-color: ${props => props.theme.headerBackground};
+	background-color: ${props => props.theme.navBackground};
 	box-shadow: 2px 2px 4px ${props => props.theme.boxShadowColor};
 	border-radius: 5px;
 

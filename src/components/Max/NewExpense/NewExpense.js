@@ -14,25 +14,27 @@ const NewExpense = props => {
 		setIsEditing(false)
 	}
 
-	const startEditingHandler = () => {
+	const startEditingHandler = event => {
 		setIsEditing(true)
+		event.preventDefault()
 	}
 
-	const stopEditingHandler = () => {
+	const stopEditingHandler = event => {
 		setIsEditing(false)
+		event.preventDefault()
 	}
 
 	return (
 		<div className='new-expense'>
-			{!isEditing && (
-				<button onClick={startEditingHandler}>Add New Expense</button>
+			{/* {!isEditing && (
+				<button onClick={startEditingHandler}>New Transaction</button>
 			)}
-			{isEditing && (
+			{isEditing && ( */}
 				<ExpenseForm
 					onSaveExpenseData={saveExpenseDataHandler}
 					onCancel={stopEditingHandler}
 				/>
-			)}
+			{/* )} */}
 		</div>
 	)
 }

@@ -31,7 +31,7 @@ export const Button = styled.button`
 	@media (max-width: 992px) {
 		//xl 1200px, 992 lg
 		top: 6px;
-		right: 10px;
+		right: 6px;
 		height: 35px;
 		width: 35px;
 
