@@ -1,11 +1,11 @@
 import './App.css'
 import Routes from './Routes'
-
+import ScrollToTop from './helpers/ScrollToTop'
 const App = () => {
 	return (
-		<div>
+		<ScrollToTop>
 			<Routes />
-		</div>
+		</ScrollToTop>
 	)
 }
 

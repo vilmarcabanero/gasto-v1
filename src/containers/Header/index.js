@@ -1,11 +1,7 @@
 import { Container } from './index.style'
 
-const Header = () => {
-	return (
-		<Container>
-			<h1>Gasto</h1>
-		</Container>
-	)
+const Header = props => {
+	return <Container>{props.children}</Container>
 }
 
 export default Header

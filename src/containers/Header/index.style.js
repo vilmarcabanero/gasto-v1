@@ -7,9 +7,11 @@ export const Container = styled.div`
 	top: 0;
 	width: 100%;
 	height: 4rem;
-	color: white;
+	color: steelblue;
 	z-index: 9999;
-	background-color: steelblue;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px ${props => props.theme.boxShadowColor};
+	background-color: ${props => props.theme.containerColorDarker};
 	
 
 	transition: all ease-in-out 0.5s;

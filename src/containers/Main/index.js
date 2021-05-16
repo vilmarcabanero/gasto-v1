@@ -9,11 +9,12 @@ const Main = props => {
 		<MainContainer>
 			<React.Fragment>
 				<CssBaseline />
-				<Container maxWidth='lg' style={{ backgroundColor: '#cfe8fc', position: 'relative',  height: '100vh' }}>
-          
-          {props.children}
-        
-        </Container>
+				<Container
+					maxWidth='lg'
+					style={{ position: 'relative', height: '100vh' }}
+				>
+					{props.children}
+				</Container>
 			</React.Fragment>
 		</MainContainer>
 	)

@@ -7,17 +7,18 @@ export const Container = styled.div`
 	top: 0;
 	bottom: 0; */
 	position: absolute;
-	height: 100vh;
+	height: calc(100vh - 4.125rem);
 	left: 0;
-	top: 0;
+	top: 4.125rem;
 	width: 250px;
 	color: white;
 	padding: 1rem;
 	padding-top: 4rem;
 	/* background-color: rgba(0, 0, 0, 0.7); */
 	/* background-color: ${props => props.theme.headerBackground}; */
-	background-color: rgba(4, 11, 20, 1);
-	
+	background-color: ${props => props.theme.headerBackground};
+	box-shadow: 2px 2px 4px ${props => props.theme.boxShadowColor};
+	border-radius: 5px;
 
 	transition: all ease-in-out 0.5s;
 	transition: all 0.5s;
