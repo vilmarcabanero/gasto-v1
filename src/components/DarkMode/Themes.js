@@ -29,7 +29,7 @@ export const darkTheme = {
 	headerBackground: 'rgba(0, 0, 0, 1)',
 	particleColor: 'rgba(38, 38, 38, 1)',
 	transparentContainer: 'transparent',
-	boxShadowColor: 'rgba(0, 0, 0, 0.5)',
+	boxShadowColor: 'rgba(255, 255, 255, 0.05)',
 	tertiaryColor: 'rgba(0, 0, 0, 0.7)',
 	toggleColor: 'rgba(0, 0, 0, 1)',
 	bannerForeground: '#fff',
