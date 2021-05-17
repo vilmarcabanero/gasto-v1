@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
 	color: ${props => props.theme.text};
 	background-color: ${props => props.theme.containerColorLighter};
 	box-shadow: 2px 2px 4px ${props => props.theme.boxShadowColor};
-	/* border-radius: 5px; */
+	border-radius: 5px;
 	/* z-index: 9999; */
 
 

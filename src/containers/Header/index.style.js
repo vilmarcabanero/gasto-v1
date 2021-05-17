@@ -9,7 +9,7 @@ export const Container = styled.div`
 	height: 4rem;
 	color: ${props => props.theme.titleColor};
 	z-index: 9999;
-	/* border-radius: 5px; */
+	border-radius: 5px;
 	box-shadow: 0px 1px 7px 3px ${props => props.theme.boxShadowColor};
 	background-color: ${props => props.theme.headerBackground};
 

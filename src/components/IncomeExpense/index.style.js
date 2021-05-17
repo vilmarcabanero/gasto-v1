@@ -8,7 +8,8 @@ export const Container = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin: 20px 0;
-	border: 1px solid #dedede;
+	/* border: 1px solid #dedede; */
+	border: 1px solid ${props => props.theme.borderColor};
 	border-radius: 5px;
 `
 
@@ -23,7 +24,7 @@ export const IncomeContainer = styled.div`
 	padding-left: 2rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	border-right: 1px solid #dedede;
+	border-right: 1px solid ${props => props.theme.borderColor};
 
 	@media (max-width: 576px) {
 		padding-left: 1.5rem;
@@ -55,7 +56,7 @@ export const ExpenseContainer = styled.div`
 	padding-left: 2rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	border-right: 1px solid #dedede;
+	border-right: 1px solid ${props => props.theme.borderColor};
 	@media (max-width: 576px) {
 		padding-left: 1.5rem;
 	}

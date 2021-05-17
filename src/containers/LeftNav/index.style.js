@@ -17,7 +17,7 @@ export const Container = styled.div`
 	/* background-color: ${props => props.theme.headerBackground}; */
 	background-color: ${props => props.theme.navBackground};
 	box-shadow: 2px 2px 4px ${props => props.theme.boxShadowColor};
-	/* border-radius: 5px; */
+	border-radius: 5px;
 
 	transition: all ease-in-out 0.5s;
 	transition: all 0.5s;
