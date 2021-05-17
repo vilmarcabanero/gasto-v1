@@ -16,9 +16,11 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import MuiDialogActions from '@material-ui/core/DialogActions'
 import IconButton from '@material-ui/core/IconButton'
-import CloseIcon from '@material-ui/icons/Close'
-import AddIcon from '@material-ui/icons/Add'
-import RemoveIcon from '@material-ui/icons/Remove'
+import {Close, Add, Remove, Delete, Edit} from '@material-ui/icons'
+// import AddIcon from '@material-ui/icons/Add'
+// import RemoveIcon from '@material-ui/icons/Remove'
+// import DeleteIcon from '@material-ui/icons/Delete'
+// import EditIcon from '@material-ui/icons/Edit';
 import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
@@ -45,7 +47,7 @@ const DialogTitle = withStyles(styles)(props => {
 					className={classes.closeButton}
 					onClick={onClose}
 				>
-					<CloseIcon />
+					<Close />
 				</IconButton>
 			) : null}
 		</MuiDialogTitle>
@@ -57,13 +59,6 @@ const DialogContent = withStyles(theme => ({
 		padding: theme.spacing(2),
 	},
 }))(MuiDialogContent)
-
-const DialogActions = withStyles(theme => ({
-	root: {
-		margin: 0,
-		padding: theme.spacing(1),
-	},
-}))(MuiDialogActions)
 
 let currentBalance = 0
 let currentIncome = 0
@@ -82,15 +77,7 @@ const ExpenseForm = props => {
 
 	//Dialog
 	const [open, setOpen] = React.useState(false)
-	const [fullWidth, setFullWidth] = React.useState(true)
-	const [maxWidth, setMaxWidth] = React.useState('xs')
-	const handleMaxWidthChange = event => {
-		setMaxWidth(event.target.value)
-	}
 
-	const handleFullWidthChange = event => {
-		setFullWidth(event.target.checked)
-	}
 	const handleClickOpen = () => {
 		setOpen(true)
 	}
@@ -188,6 +175,10 @@ const ExpenseForm = props => {
 	const cashInHandler = event => {
 		event.preventDefault()
 
+		if (enteredAmount.trim('').length === 0) {
+			alert('Please fill up the amount')
+		}
+
 		const expenseData = {
 			title: enteredTitle,
 			amount: +enteredAmount,
@@ -229,11 +220,11 @@ const ExpenseForm = props => {
 				<h3>Balance: {balance}</h3>
 				<h3 className='income'>Income: {income}</h3>
 				<h3 className='expense'>Expense: {expense}</h3>
+				<Delete style={{ color: '#E74C3C' }} />
+				<Edit style={{ color: '#1976D2 ' }} />
 			</form>
 
 			<Dialog
-				fullWidth={fullWidth}
-				maxWidth={maxWidth}
 				onClose={handleClose}
 				aria-labelledby='customized-dialog-title'
 				open={open}
@@ -304,22 +295,6 @@ const ExpenseForm = props => {
 							</div>
 						</div>
 					</form>
-
-					{/* <Typography gutterBottom>
-						Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-						dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-						ac consectetur ac, vestibulum at eros.
-					</Typography>
-					<Typography gutterBottom>
-						Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-						Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-						auctor.
-					</Typography>
-					<Typography gutterBottom>
-						Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-						cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-						dui. Donec ullamcorper nulla non metus auctor fringilla.
-					</Typography> */}
 				</DialogContent>
 				<DialogContent>
 					<Grid container justify='space-around'>
@@ -327,15 +302,17 @@ const ExpenseForm = props => {
 							style={{ width: '49.5%' }}
 							id='cashin-button'
 							onClick={cashInHandler}
+							type='submit'
 						>
-							<AddIcon />  Cash in
+							<Add /> Cash in
 						</Button>
 						<Button
 							style={{ width: '49.5%' }}
 							id='cashout-button'
 							onClick={cashOutHandler}
+							type='submit'
 						>
-							<RemoveIcon />  Cash out
+							<Remove /> Cash out
 						</Button>
 					</Grid>
 				</DialogContent>

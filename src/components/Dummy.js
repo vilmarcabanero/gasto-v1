@@ -5,6 +5,7 @@ import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns'
 import Grid from '@material-ui/core/Grid'
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import {
 	MuiPickersUtilsProvider,
@@ -54,6 +55,7 @@ const Dummy = () => {
 			</MuiPickersUtilsProvider>
 
 			<Text>
+				<DeleteIcon />
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ratione
 				repellat perspiciatis, delectus saepe rem vero cum eligendi eveniet quis
 				eos earum neque, enim veniam quam, quod suscipit? Ea, dolor.
