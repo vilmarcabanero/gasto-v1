@@ -50,10 +50,12 @@
 #cashin-button {
   background-color: #3ab98d;
 	border-color: #3ab98d;
+	color: white;
 }
 
 #cashout-button {
   background-color: #cb4545;
 	border-color: #cb4545;
+	color: white;
 }
 
