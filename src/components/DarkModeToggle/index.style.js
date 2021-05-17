@@ -11,7 +11,7 @@ export const Button = styled.button`
 	border-radius: 50%;
 	border: none;
 	z-index: 9999;
-	background-color: ${props => props.theme.toggleColor};
+	background-color: ${props => props.theme.navBackground};
 	transition: all 0.5s ease;
 	color: white;
 	box-shadow: 0px 1px 7px 3px white;
