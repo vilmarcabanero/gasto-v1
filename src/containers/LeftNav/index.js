@@ -3,7 +3,7 @@ import { Container, Title } from './index.style'
 const RightNav = () => {
 	return (
 		<Container>
-			<Title>Expense Tracker</Title>
+			<Title>Vil</Title>
 		</Container>
 	)
 }

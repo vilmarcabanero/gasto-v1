@@ -7,9 +7,9 @@ export const Container = styled.div`
 	top: 0;
 	bottom: 0; */
 	position: absolute;
-	height: calc(100vh - 4.125rem);
+	height: calc(100vh - 4rem);
 	left: 0;
-	top: 4.125rem;
+	top: 4rem;
 	width: 250px;
 	color: white;
 	padding: 1rem;
@@ -17,7 +17,7 @@ export const Container = styled.div`
 	/* background-color: ${props => props.theme.headerBackground}; */
 	background-color: ${props => props.theme.navBackground};
 	box-shadow: 2px 2px 4px ${props => props.theme.boxShadowColor};
-	border-radius: 5px;
+	/* border-radius: 5px; */
 
 	transition: all ease-in-out 0.5s;
 	transition: all 0.5s;
