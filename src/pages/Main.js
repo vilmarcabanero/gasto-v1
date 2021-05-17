@@ -8,6 +8,8 @@ import DarkModeToggle from '../components/DarkModeToggle'
 import { useDarkMode } from '../components/DarkMode/useDarkMode'
 import { lightTheme, darkTheme } from '../components/DarkMode/Themes'
 import { ThemeProvider } from 'styled-components'
+import Title from '../components/Title'
+import IncomeExpense from '../components/IncomeExpense'
 const MainPage = () => {
 	const [theme, themeToggler, mountedComponent] = useDarkMode()
 	const themeMode = theme === 'light' ? lightTheme : darkTheme
@@ -28,7 +30,10 @@ const MainPage = () => {
 						<DarkModeToggle theme={theme} toggleTheme={themeToggler} />
 					</Header>
 					<LeftNav />
-					<MyContainer />
+					<MyContainer>
+					<Title/>
+					<IncomeExpense/>
+					</MyContainer>
 				</Main>
 			</ThemeProvider>
 		</motion.div>

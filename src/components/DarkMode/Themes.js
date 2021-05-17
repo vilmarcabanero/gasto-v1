@@ -4,7 +4,8 @@ export const lightTheme = {
 	toggleBorder: '#FFF',
 	background: 'linear-gradient(#39598A, #79D7ED)',
 	titleColor: '#173B6c',
-	navBackground: 'rgba(4, 11, 20, 0.8)',
+	navBackground: 'rgba(4, 11, 45, 0.85)',
+
 	headerBackground: 'rgba(255, 255, 255, 0.4)',
 	particleColor: '#fff',
 	transparentContainer: 'rgba(255, 255, 255, 1)',
@@ -33,5 +34,5 @@ export const darkTheme = {
 	bannerForeground: '#fff',
 	titleBackground: 'rgba(0, 0, 0, 0.5)',
 	containerColorLighter: 'rgba(0, 0, 0, 0.4)',
-	containerColorDarker: 'rgba(0, 0, 0, 0.7)'
+	containerColorDarker: 'rgba(0, 0, 0, 0.7)',
 }
