@@ -125,7 +125,7 @@ const Index = ({ onNewTransaction }) => {
 		const data = {
 			id: uniqueId(),
 			name: nameValue,
-			amount: parseInt(amountValue),
+			amount: parseFloat(amountValue),
 			day: day,
 			month: month,
 			year: year,
