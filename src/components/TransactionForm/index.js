@@ -111,9 +111,9 @@ const Index = ({ onNewTransaction }) => {
 		}
 
 		const date = () => {
-			alert(enteredDate.toLocaleDateString())
 			if (enteredDate.toLocaleDateString() === dateNow) {
-				return 'Today'
+				// return 'Today'
+				return `${day}, ${month} ${year}`
 			} else {
 				return `${day}, ${month} ${year}`
 			}

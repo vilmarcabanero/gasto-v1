@@ -1,31 +1,52 @@
 import React from 'react'
+import { StylesProvider } from '@material-ui/core/styles'
+
+import {
+	Container,
+	HeaderRow,
+	HeaderCells,
+	BodyRow,
+	Data,
+	IconContainer,
+	DeleteIcon,
+	EditIcon,
+} from './index.style'
 
 function TransactionHistory({ transactions, onDeleteTransaction }) {
-	// const month = props.date.toLocaleString('en-US', { month: 'long' }) + ' '
-	// const day = props.date.toLocaleString('en-US', { day: '2-digit' }) + ', '
-	// const year = props.date.getFullYear()
-
 	return (
-		<div>
-			<h2>Transaction History</h2>
-			<ul className='transactions'>
+		<StylesProvider injectFirst>
+			<Container>
+				<HeaderRow>
+					<HeaderCells> Date </HeaderCells>
+					<HeaderCells> Time </HeaderCells>
+					<HeaderCells> Remark </HeaderCells>
+					<HeaderCells> Amount </HeaderCells>
+					<HeaderCells> </HeaderCells>
+					<HeaderCells> </HeaderCells>
+				</HeaderRow>
 				{transactions.map(data => (
-					<li key={data.id}>
-						<div>{data.date}</div>
-						<div>
-							<span>{`${data.time}`}</span>
-						</div>
-
-						<div>{data.name}</div>
-						<div>
-							<span>${data.amount}</span>
-
-							<button onClick={() => onDeleteTransaction(data.id)}>x</button>
-						</div>
-					</li>
+					<BodyRow key={data.id}>
+						<Data>{data.date}</Data>
+						<Data>{data.time}</Data>
+						<Data>{data.name}</Data>
+						<Data>{data.amount}</Data>
+						<Data>
+							<IconContainer className='hide'>
+								<EditIcon />
+							</IconContainer>
+						</Data>
+						<Data>
+							<IconContainer
+								className='hide'
+								onClick={() => onDeleteTransaction(data.id)}
+							>
+								<DeleteIcon />
+							</IconContainer>
+						</Data>
+					</BodyRow>
 				))}
-			</ul>
-		</div>
+			</Container>
+		</StylesProvider>
 	)
 }
 

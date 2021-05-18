@@ -1,6 +1,6 @@
 export const lightTheme = {
 	body: '#FFF',
-	text: '#363537',
+	text: '#2c324b',
 	toggleBorder: '#FFF',
 	background: 'linear-gradient(#39598A, #79D7ED)',
 	titleColor: '#173B6c',
@@ -14,6 +14,8 @@ export const lightTheme = {
 	toggleColor: '#149ddd',
 	bannerForeground: 'black',
 	titleBackground: 'rgba(0, 0, 0, 0.5)',
+	highlightColor: 'rgb(245, 245, 245)',
+	hoverHighlightColor: 'rgb(230, 230, 230)',
 	containerColorLighter: 'rgba(255, 255, 255, 0.4)',
 	containerColorDarker: 'rgba(255, 255, 255, 0.4)',
 }
@@ -34,6 +36,8 @@ export const darkTheme = {
 	toggleColor: 'rgba(0, 0, 0, 1)',
 	bannerForeground: '#fff',
 	titleBackground: 'rgba(0, 0, 0, 0.5)',
+	highlightColor: 'rgb(34, 34, 34)',
+	hoverHighlightColor: 'rgb(50, 50, 50)',
 	containerColorLighter: 'rgba(0, 0, 0, 0.4)',
 	containerColorDarker: 'rgba(0, 0, 0, 0.7)',
 }
