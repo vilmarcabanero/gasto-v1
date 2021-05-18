@@ -11,33 +11,33 @@ import {
 	EqualsIcon,
 } from './index.style'
 
-const index = () => {
+const Index = ({income, expense}) => {
 	return (
 		<Container>
 			<IncomeContainer>
 				<Title>
 					<PlusIcon />
-					Income
+					Cash In
 				</Title>
 
-				<Amount>0.00 </Amount>
+				<Amount>{income} </Amount>
 			</IncomeContainer>
 			<ExpenseContainer>
 				<Title>
 					<MinusIcon />
-					Expense
+					Cash out
 				</Title>
-				<Amount> 0.00 </Amount>
+				<Amount> {expense} </Amount>
 			</ExpenseContainer>
 			<BalanceContainer>
 				<Title><EqualsIcon/>
 					Balance
           
 				</Title>
-				<Amount>0.00</Amount>
+				<Amount>{income - expense}</Amount>
 			</BalanceContainer>
 		</Container>
 	)
 }
 
-export default index
+export default Index

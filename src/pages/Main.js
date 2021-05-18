@@ -8,10 +8,10 @@ import DarkModeToggle from '../components/DarkModeToggle'
 import { useDarkMode } from '../components/DarkMode/useDarkMode'
 import { lightTheme, darkTheme } from '../components/DarkMode/Themes'
 import { ThemeProvider } from 'styled-components'
-import Title from '../components/Title'
-import IncomeExpense from '../components/IncomeExpense'
-import NewTransaction from '../components/NewTransaction'
-
+// import Title from '../components/Title'
+// import IncomeExpense from '../components/Expense'
+// import NewTransaction from '../components/NewTransaction'
+import Gasto from '../components/Gasto'
 
 const MainPage = () => {
 	const [theme, themeToggler, mountedComponent] = useDarkMode()
@@ -34,9 +34,10 @@ const MainPage = () => {
 					</Header>
 					<LeftNav />
 					<MyContainer>
-					<Title/>
+					{/* <Title/>
 					<NewTransaction/>
-					<IncomeExpense/>
+					<IncomeExpense/> */}
+					<Gasto/>
 					</MyContainer>
 				</Main>
 			</ThemeProvider>
