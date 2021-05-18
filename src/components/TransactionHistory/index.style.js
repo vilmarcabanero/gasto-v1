@@ -51,7 +51,6 @@ export const BodyRow = styled.div`
 	&:hover,
 	&:active {
 		background-color: ${props => props.theme.highlightColor};
-		transition: all 0.5s ease;
 		.hide {
 			visibility: visible;
 		}
@@ -59,7 +58,6 @@ export const BodyRow = styled.div`
 
 	&:active {
 		background-color: ${props => props.theme.highlightColor};
-		transition: all 0.5s ease;
 		.hide {
 			visibility: visible;
 		}
@@ -89,7 +87,6 @@ export const IconContainer = styled.div`
 	&:hover {
 		cursor: pointer;
 		background-color: ${props => props.theme.hoverHighlightColor};
-		transition: all 0.5s ease;
 	}
 `
 
