@@ -72,22 +72,62 @@ const MuiDialogContent = withStyles(theme => ({
 }))(DialogContent)
 
 const Index = ({ onNewTransaction }) => {
-	const [enteredTitle, setEnteredTitle] = useState('')
-	const [enteredAmount, setEnteredAmount] = useState('')
-	const [enteredDate, setEnteredDate] = useState(new Date())
 
+	const [enteredDate, setEnteredDate] = useState(new Date())
 	const [enteredTime, setEnteredTime] = useState(new Date())
 
 	const [nameValue, setNameValue] = useState('')
 	const [amountValue, setAmountValue] = useState('')
 
+	let dateNow = enteredDate.toLocaleDateString()
+	// alert(dateNow)
+
 	const addTransaction = (type, evt) => {
 		evt.preventDefault()
+
+		let month = enteredDate.toLocaleString('en-US', { month: 'long' })
+		let day = enteredDate.toLocaleString('en-US', { day: '2-digit' })
+		let year = enteredDate.getFullYear()
+
+		let hr = enteredTime.getHours()
+		let min = enteredTime.getMinutes()
+
+		const time = () => {
+			if (min < 10) {
+				min = '0' + min
+			}
+
+			let ampm = 'AM'
+			if (hr > 12) {
+				hr -= 12
+				ampm = 'PM'
+			}
+
+			if (hr < 10) {
+				hr = '0' + hr
+			}
+
+			return `${hr}:${min} ${ampm}`
+		}
+
+		const date = () => {
+			alert(enteredDate.toLocaleDateString())
+			if (enteredDate.toLocaleDateString() === dateNow) {
+				return 'Today'
+			} else {
+				return `${day}, ${month} ${year}`
+			}
+		}
 
 		const data = {
 			id: uniqueId(),
 			name: nameValue,
 			amount: parseInt(amountValue),
+			day: day,
+			month: month,
+			year: year,
+			date: date(),
+			time: time(),
 			type: type,
 		}
 
@@ -107,31 +147,27 @@ const Index = ({ onNewTransaction }) => {
 		setOpen(false)
 	}
 
-	const titleChangeHandler = event => {
-		setEnteredTitle(event.target.value)
+	const nameChangeHandler = (e) => {
+		setNameValue(e.target.value)
+	}
+	
+
+	const amountChangeHandler = e => {
+		setAmountValue(e.target.value)
 	}
 
-	const amountChangeHandler = event => {
-		setEnteredAmount(event.target.value)
+	const dateChangeHandler = e => {
+		setEnteredDate(e)
 	}
 
-	const dateChangeHandler = event => {
-		setEnteredDate(event)
+	const timeChangeHandler = e => {
+		setEnteredTime(e)
 	}
 
-	const timeChangeHandler = event => {
-		setEnteredTime(event)
-	}
+	const cashOutHandler = e => {
+		e.preventDefault()
 
-	const cashOutHandler = event => {
-		event.preventDefault()
-
-		addTransaction('expense', event)
-
-		setEnteredTitle('')
-		setEnteredAmount('')
-		setEnteredDate(new Date())
-		setEnteredTime(new Date())
+		addTransaction('expense', e)
 
 		setOpen(false)
 		if (amountValue.trim('').length === 0) {
@@ -140,13 +176,10 @@ const Index = ({ onNewTransaction }) => {
 		}
 	}
 
-	const cashInHandler = event => {
-		event.preventDefault()
+	const cashInHandler = e => {
+		e.preventDefault()
 
-		setEnteredTitle('')
-		setEnteredAmount('')
-		setEnteredDate(new Date())
-		setEnteredTime(new Date())
+		addTransaction('income', e)
 
 		setOpen(false)
 		if (amountValue.trim('').length === 0) {
@@ -211,7 +244,7 @@ const Index = ({ onNewTransaction }) => {
 								min='0.01'
 								step='0.01'
 								value={amountValue}
-								onChange={e => setAmountValue(e.target.value)}
+								onChange={amountChangeHandler}
 								required
 							/>
 							<Placeholder>Amount</Placeholder>
@@ -222,7 +255,7 @@ const Index = ({ onNewTransaction }) => {
 								type='text'
 								placeholder='Enter details (Name, Bill No, Item Name, Quantity etc.)'
 								value={nameValue}
-								onChange={e => setNameValue(e.target.value)}
+								onChange={nameChangeHandler}
 								required
 							/>
 							<Placeholder>Remarks</Placeholder>
@@ -241,7 +274,7 @@ const Index = ({ onNewTransaction }) => {
 						<CashInButton
 							style={{ width: '51%' }}
 							id='cashin-button'
-							onClick={e => addTransaction('income', e)}
+							onClick={cashInHandler}
 							type='submit'
 						>
 							<Add /> Cash in

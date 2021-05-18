@@ -4,13 +4,7 @@ import Expense from '../Expense'
 import TransactionHistory from '../TransactionHistory'
 import TransactionForm from '../TransactionForm'
 
-// import { uniqueId } from '../../utils'
-
-// Aggregator component/container component
-
-// const transactionData = []
-
-function ExpenseTracker() {
+const Gasto = () => {
 	const [income, setIncome] = useState(0)
 	const [expense, setExpense] = useState(0)
 	const [transactions, setTransactions] = useState([])
@@ -43,7 +37,7 @@ function ExpenseTracker() {
 	}
 
 	const handleDeleteTransaction = id => {
-		const newTransactions = transactions.filter(item => item.id != id)
+		const newTransactions = transactions.filter(item => item.id !== id)
 		setTransactions(newTransactions)
 	}
 
@@ -74,4 +68,4 @@ function ExpenseTracker() {
 	)
 }
 
-export default ExpenseTracker
+export default Gasto
