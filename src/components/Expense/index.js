@@ -12,7 +12,7 @@ import {
 } from './index.style'
 
 //Money formatter function
-function moneyFormatter(num) {
+const moneyFormatter = num => {
 	let p = num.toFixed(2).split('.')
 	return (
 		'₱ ' +

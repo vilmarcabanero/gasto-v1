@@ -29,6 +29,7 @@ const Gasto = () => {
 
 		setIncome(income)
 		setExpense(expense)
+		
 	}
 
 	const handleAddNewTransaction = item => {
@@ -57,13 +58,14 @@ const Gasto = () => {
 	return (
 		<div>
 			<h1>Vil</h1>
-      <TransactionForm onNewTransaction={handleAddNewTransaction} />
+			<TransactionForm onNewTransaction={handleAddNewTransaction} />
 			<Expense income={income} expense={expense} />
 			<TransactionHistory
+				income={income}
+				expense={expense}
 				transactions={transactions}
 				onDeleteTransaction={handleDeleteTransaction}
 			/>
-			
 		</div>
 	)
 }

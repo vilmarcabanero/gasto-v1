@@ -72,7 +72,6 @@ const MuiDialogContent = withStyles(theme => ({
 }))(DialogContent)
 
 const Index = ({ onNewTransaction }) => {
-
 	const [enteredDate, setEnteredDate] = useState(new Date())
 	const [enteredTime, setEnteredTime] = useState(new Date())
 
@@ -101,6 +100,10 @@ const Index = ({ onNewTransaction }) => {
 			if (hr > 12) {
 				hr -= 12
 				ampm = 'PM'
+			}
+
+			if (hr === 0) {
+				hr = 12
 			}
 
 			if (hr < 10) {
@@ -147,10 +150,9 @@ const Index = ({ onNewTransaction }) => {
 		setOpen(false)
 	}
 
-	const nameChangeHandler = (e) => {
+	const nameChangeHandler = e => {
 		setNameValue(e.target.value)
 	}
-	
 
 	const amountChangeHandler = e => {
 		setAmountValue(e.target.value)
@@ -167,11 +169,14 @@ const Index = ({ onNewTransaction }) => {
 	const cashOutHandler = e => {
 		e.preventDefault()
 
-		addTransaction('expense', e)
-
 		setOpen(false)
-		if (amountValue.trim('').length === 0) {
+		if (amountValue.trim('').length !== 0 && nameValue.trim().length !== 0) {
+			addTransaction('expense', e)
+		} else if (amountValue.trim('').length === 0) {
 			alert('Please fill up the amount')
+			setOpen(true)
+		} else if (nameValue.trim().length === 0) {
+			alert('Please fill up the remarks')
 			setOpen(true)
 		}
 	}
@@ -179,11 +184,15 @@ const Index = ({ onNewTransaction }) => {
 	const cashInHandler = e => {
 		e.preventDefault()
 
-		addTransaction('income', e)
-
 		setOpen(false)
-		if (amountValue.trim('').length === 0) {
+
+		if (amountValue.trim('').length !== 0 && nameValue.trim().length !== 0) {
+			addTransaction('income', e)
+		} else if (amountValue.trim('').length === 0) {
 			alert('Please fill up the amount')
+			setOpen(true)
+		} else if (nameValue.trim().length === 0) {
+			alert('Please fill up the remarks')
 			setOpen(true)
 		}
 	}

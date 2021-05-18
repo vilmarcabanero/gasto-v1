@@ -3,9 +3,16 @@ import { Delete, Edit } from '@material-ui/icons'
 export const Container = styled.table`
 	margin: 2.5rem 0;
 	width: 100%;
-  position: relative;
-	.hide {
-		visibility: hidden;
+	position: relative;
+
+	.income {
+		color: ${props => props.theme.incomeText};
+		font-weight: 500;
+	}
+
+	.expense {
+		color: ${props => props.theme.expenseText};
+		font-weight: 500;
 	}
 `
 
@@ -23,8 +30,8 @@ export const HeaderRow = styled.div`
 	text-align: left;
 	font-weight: bold;
 	font-size: 16px;
-  position: sticky;
-  top: -1rem;
+	position: sticky;
+	top: -1rem;
 
 	transition: all 0.5s ease;
 
@@ -39,6 +46,22 @@ export const HeaderCells = styled.div`
 
 export const Body = styled.tbody``
 
+export const IconContainer = styled.div`
+	width: 2.5rem;
+	height: 2.5em;
+	border-radius: 50%;
+	padding: 0.25rem;
+	margin: 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	&:hover {
+		cursor: pointer;
+		background-color: ${props => props.theme.hoverHighlightColor};
+	}
+`
+
 export const BodyRow = styled.div`
 	width: 100%;
 	display: grid;
@@ -51,14 +74,7 @@ export const BodyRow = styled.div`
 	&:hover,
 	&:active {
 		background-color: ${props => props.theme.highlightColor};
-		.hide {
-			visibility: visible;
-		}
-	}
-
-	&:active {
-		background-color: ${props => props.theme.highlightColor};
-		.hide {
+		${IconContainer} {
 			visibility: visible;
 		}
 	}
@@ -67,26 +83,11 @@ export const BodyRow = styled.div`
 export const Data = styled.div`
 	padding: 6px 16px 6px 16px;
 	font-size: 17px;
-	color: ${props => props.theme.text};
+	/* color: ${props => props.theme.text}; */
 	transition: all 0.5s ease;
 
 	@media (max-width: 576px) {
 		font-size: 15px;
-	}
-`
-
-export const IconContainer = styled.div`
-	width: 2.5rem;
-	height: 2.5em;
-	border-radius: 50%;
-	padding: 0.25rem;
-	margin: 2px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		cursor: pointer;
-		background-color: ${props => props.theme.hoverHighlightColor};
 	}
 `
 
@@ -95,5 +96,5 @@ export const DeleteIcon = styled(Delete)`
 `
 
 export const EditIcon = styled(Edit)`
-	color: #1976D2;
+	color: #1976d2;
 `

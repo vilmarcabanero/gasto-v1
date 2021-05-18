@@ -1,6 +1,8 @@
 export const lightTheme = {
 	body: '#FFF',
 	text: '#2c324b',
+	incomeText: '#rab98d',
+	expenseText: '#cb4545',
 	toggleBorder: '#FFF',
 	background: 'linear-gradient(#39598A, #79D7ED)',
 	titleColor: '#173B6c',
@@ -25,6 +27,8 @@ export const lightTheme = {
 export const darkTheme = {
 	body: '#363537',
 	text: '#FAFAFA',
+	incomeText: '#2ecc71',
+	expenseText: '#c0392b',
 	toggleBorder: '#6B8096',
 	background: '#999',
 	titleColor: '#fff',

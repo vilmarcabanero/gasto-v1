@@ -11,7 +11,7 @@ import {
 	DeleteIcon,
 	EditIcon,
 } from './index.style'
-import {moneyFormatter} from './helpers'
+import { moneyFormatter } from './helpers'
 
 const TransactionHistory = ({ transactions, onDeleteTransaction }) => {
 	return (
@@ -30,7 +30,10 @@ const TransactionHistory = ({ transactions, onDeleteTransaction }) => {
 						<Data>{data.date}</Data>
 						<Data>{data.time}</Data>
 						<Data>{data.name}</Data>
-						<Data>{moneyFormatter(data.amount)}</Data>
+						<Data className={data.type === 'expense' ? 'expense' : 'income'}>
+							{moneyFormatter(data.amount)}
+						</Data>
+
 						<Data>
 							<IconContainer className='hide'>
 								<EditIcon />
