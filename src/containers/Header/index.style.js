@@ -13,8 +13,7 @@ export const Container = styled.div`
 	box-shadow: 0px 1px 7px 3px ${props => props.theme.boxShadowColor};
 	background-color: ${props => props.theme.headerBackground};
 
-	transition: all ease-in-out 0.5s;
-	transition: all 0.5s;
+	transition: all 0.5s ease;
 
 	@media (max-width: 992px) {
 		height: 3rem;

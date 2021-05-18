@@ -26,6 +26,8 @@ export const HeaderRow = styled.div`
   position: sticky;
   top: -1rem;
 
+	transition: all 0.5s ease;
+
 	@media (max-width: 576px) {
 		font-size: 14px;
 	}
@@ -45,9 +47,11 @@ export const BodyRow = styled.div`
 	padding-right: 1rem;
 	grid-template-columns: 15% 12% 45% 18% 5% 5%;
 	color: ${props => props.theme.text};
+	transition: all 0.5s ease;
 	&:hover,
 	&:active {
 		background-color: ${props => props.theme.highlightColor};
+		transition: all 0.5s ease;
 		.hide {
 			visibility: visible;
 		}
@@ -55,6 +59,7 @@ export const BodyRow = styled.div`
 
 	&:active {
 		background-color: ${props => props.theme.highlightColor};
+		transition: all 0.5s ease;
 		.hide {
 			visibility: visible;
 		}
@@ -62,9 +67,10 @@ export const BodyRow = styled.div`
 `
 
 export const Data = styled.div`
-	padding: 16px;
+	padding: 6px 16px 6px 16px;
 	font-size: 17px;
 	color: ${props => props.theme.text};
+	transition: all 0.5s ease;
 
 	@media (max-width: 576px) {
 		font-size: 15px;
@@ -83,6 +89,7 @@ export const IconContainer = styled.div`
 	&:hover {
 		cursor: pointer;
 		background-color: ${props => props.theme.hoverHighlightColor};
+		transition: all 0.5s ease;
 	}
 `
 
@@ -91,5 +98,5 @@ export const DeleteIcon = styled(Delete)`
 `
 
 export const EditIcon = styled(Edit)`
-	color: #e74c3c;
+	color: #1976D2;
 `
