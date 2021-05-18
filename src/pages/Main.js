@@ -12,6 +12,9 @@ import { ThemeProvider } from 'styled-components'
 // import IncomeExpense from '../components/Expense'
 // import NewTransaction from '../components/NewTransaction'
 import Gasto from '../components/Gasto'
+import Search from '../components/LeftNav/Search'
+import Book from '../components/LeftNav/Book'
+
 
 const MainPage = () => {
 	const [theme, themeToggler, mountedComponent] = useDarkMode()
@@ -32,7 +35,10 @@ const MainPage = () => {
 						<h1>Gasto</h1>
 						<DarkModeToggle theme={theme} toggleTheme={themeToggler} />
 					</Header>
-					<LeftNav />
+					<LeftNav>
+						<Search/>
+						<Book/>
+					</LeftNav>
 					<MyContainer>
 					{/* <Title/>
 					<NewTransaction/>

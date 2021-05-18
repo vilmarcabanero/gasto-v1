@@ -17,7 +17,7 @@ export const HeaderRow = styled.div`
 	align-items: center;
 	justify-content: flex-start;
 	padding-right: 1rem;
-	grid-template-columns: 15% 12.5% 45% 17.5% 5% 5%;
+	grid-template-columns: 15% 12% 45% 18% 5% 5%;
 	background-color: ${props => props.theme.highlightColor};
 	color: ${props => props.theme.text};
 	text-align: left;
@@ -43,7 +43,7 @@ export const BodyRow = styled.div`
 	align-items: center;
 	justify-content: flex-start;
 	padding-right: 1rem;
-	grid-template-columns: 15% 12.5% 45% 17.5% 5% 5%;
+	grid-template-columns: 15% 12% 45% 18% 5% 5%;
 	color: ${props => props.theme.text};
 	&:hover,
 	&:active {
@@ -63,11 +63,11 @@ export const BodyRow = styled.div`
 
 export const Data = styled.div`
 	padding: 16px;
-	font-size: 16px;
+	font-size: 17px;
 	color: ${props => props.theme.text};
 
 	@media (max-width: 576px) {
-		font-size: 14px;
+		font-size: 15px;
 	}
 `
 
@@ -88,12 +88,8 @@ export const IconContainer = styled.div`
 
 export const DeleteIcon = styled(Delete)`
 	color: #e74c3c;
-	margin: 3px;
-	border-radius: 50%;
 `
 
 export const EditIcon = styled(Edit)`
 	color: #e74c3c;
-	margin: 3px;
-	border-radius: 50%;
 `

@@ -4,14 +4,30 @@ import {
 	IncomeContainer,
 	ExpenseContainer,
 	Title,
-  Amount,
+	Amount,
 	BalanceContainer,
 	PlusIcon,
 	MinusIcon,
 	EqualsIcon,
 } from './index.style'
 
-const Index = ({income, expense}) => {
+//Money formatter function
+function moneyFormatter(num) {
+	let p = num.toFixed(2).split('.')
+	return (
+		'₱ ' +
+		p[0]
+			.split('')
+			.reverse()
+			.reduce(function (acc, num, i, orig) {
+				return num === '-' ? acc : num + (i && !(i % 3) ? ',' : '') + acc
+			}, '') +
+		'.' +
+		p[1]
+	)
+}
+
+const Index = ({ income, expense }) => {
 	return (
 		<Container>
 			<IncomeContainer>
@@ -20,21 +36,21 @@ const Index = ({income, expense}) => {
 					Cash In
 				</Title>
 
-				<Amount>{income} </Amount>
+				<Amount>{moneyFormatter(income)} </Amount>
 			</IncomeContainer>
 			<ExpenseContainer>
 				<Title>
 					<MinusIcon />
 					Cash out
 				</Title>
-				<Amount> {expense} </Amount>
+				<Amount> {moneyFormatter(expense)} </Amount>
 			</ExpenseContainer>
 			<BalanceContainer>
-				<Title><EqualsIcon/>
+				<Title>
+					<EqualsIcon />
 					Balance
-          
 				</Title>
-				<Amount>{income - expense}</Amount>
+				<Amount>{moneyFormatter(income - expense)}</Amount>
 			</BalanceContainer>
 		</Container>
 	)

@@ -27,6 +27,3 @@ export const Container = styled.div`
 		left: -330px;
 	}
 `
-export const Title = styled.h1`
-	font-size: 20px;
-`
