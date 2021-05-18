@@ -50,7 +50,11 @@ const Index = ({ income, expense }) => {
 					<EqualsIcon />
 					Balance
 				</Title>
-				<Amount>{moneyFormatter(income - expense)}</Amount>
+				<Amount>
+					{income - expense < 0
+						? `- ${moneyFormatter(income - expense)}`
+						: moneyFormatter(income - expense)}
+				</Amount>
 			</BalanceContainer>
 		</Container>
 	)
