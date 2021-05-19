@@ -1,4 +1,4 @@
-<h1>Gasto<a href="https://github.com/vilmarcabanero/gasto">📦</a></h1>
+<h1>Gasto, an expense tracker app.<a href="https://github.com/vilmarcabanero/gasto">📦</a></h1>
 
 <h2><samp>Developed using the the MERN Stack</samp></h2>
 
