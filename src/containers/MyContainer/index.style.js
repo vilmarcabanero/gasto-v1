@@ -11,7 +11,6 @@ export const StyledContainer = styled.div`
 	border-radius: 5px;
 	/* z-index: 9999; */
 
-
 	padding: 1rem;
 	height: calc(100vh - 4rem);
 	overflow-y: auto;
@@ -23,6 +22,29 @@ export const StyledContainer = styled.div`
 		top: 3rem;
 		height: calc(100vh - 3rem);
 		width: 100%;
+	}
+
+	/* width */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: ${props => props.theme.scrollBarTrackColor};
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		/* background: #888; */
+		background: ${props => props.theme.scrollBarColor};
+		border-radius: 5px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		/* background: #555; */
+		background: ${props => props.theme.scrollBarHoverColor};
 	}
 `
 export const Text = styled.h1`
