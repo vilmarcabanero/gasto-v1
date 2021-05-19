@@ -1,3 +1,7 @@
+export const uniqueId = () => {
+    return Math.round(Math.random() * 1000000);
+}
+
 //Money formatter function
 export const moneyFormatter = num => {
 	let p = num.toFixed(2).split('.')

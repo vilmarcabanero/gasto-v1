@@ -48,11 +48,12 @@ const Gasto = () => {
 			setTransactions(localState)
 		} else {
 			calculateExpenses()
-		}
+		} // eslint-disable-next-line
 	}, [])
+	
 
 	useEffect(() => {
-		calculateExpenses()
+		calculateExpenses() // eslint-disable-next-line
 	}, [transactions])
 
 	return (

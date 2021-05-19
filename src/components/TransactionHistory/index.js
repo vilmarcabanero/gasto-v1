@@ -11,7 +11,7 @@ import {
 	DeleteIcon,
 	EditIcon,
 } from './index.style'
-import { moneyFormatter } from './helpers'
+import { moneyFormatter } from '../../utils/math'
 
 const TransactionHistory = ({ transactions, onDeleteTransaction }) => {
 	return (
