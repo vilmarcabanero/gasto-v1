@@ -1,6 +1,6 @@
 import './App.css'
-import Routes from './Routes'
-import ScrollToTop from './helpers/ScrollToTop'
+import Routes from './utils/Routes'
+import ScrollToTop from './utils/ScrollToTop'
 const App = () => {
 	return (
 		<ScrollToTop>

@@ -22,6 +22,9 @@ export const lightTheme = {
 	hoverHighlightColor: 'rgb(230, 230, 230)',
 	containerColorLighter: 'rgba(255, 255, 255, 0.4)',
 	containerColorDarker: 'rgba(255, 255, 255, 0.4)',
+	scrollBarTrackColor: 'rgba(50, 50, 50, 0.1)',
+	scrollBarColor: 'rgba(50, 50, 50, 0.15)',
+	scrollBarHoverColor: 'rgba(50, 50, 50, 0.2)'
 }
 
 export const darkTheme = {
@@ -48,4 +51,7 @@ export const darkTheme = {
 	hoverHighlightColor: 'rgb(50, 50, 50)',
 	containerColorLighter: 'rgba(0, 0, 0, 0.4)',
 	containerColorDarker: 'rgba(0, 0, 0, 0.7)',
+	scrollBarTrackColor: 'rgba(255, 255, 255, 0.1)',
+	scrollBarColor: 'rgba(255, 255, 255, 0.1)',
+	scrollBarHoverColor: 'rgba(255, 255, 255, 0.2)'
 }

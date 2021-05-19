@@ -85,10 +85,10 @@ export const Form = styled.form``
 export const Label = styled.label`
 	position: relative;
 	width: 100%;
-	margin-bottom: 1rem;
+	margin: 10px 0;
 	padding-top: 1rem;
 	transition: all 0.5s ease;
-
+	display: inline-block; //heto solution. 
 	&:hover {
 		cursor: text;
 	}
@@ -124,7 +124,6 @@ export const Input = styled.input`
 	transition: all 0.5s ease;
 	outline: none;
 	border: 1px solid rgba(0, 0, 0, 0.2);
-
 	&::-ms-reveal,
 	&::-ms-clear {
 		display: none;

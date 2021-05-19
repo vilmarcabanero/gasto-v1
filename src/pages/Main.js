@@ -5,16 +5,12 @@ import Header from '../containers/Header'
 import MyContainer from '../containers/MyContainer'
 import Background from '../containers/Background'
 import DarkModeToggle from '../components/DarkModeToggle'
-import { useDarkMode } from '../components/DarkMode/useDarkMode'
-import { lightTheme, darkTheme } from '../components/DarkMode/Themes'
+import { useDarkMode } from '../utils/DarkMode/useDarkMode'
+import { lightTheme, darkTheme } from '../utils/DarkMode/Themes'
 import { ThemeProvider } from 'styled-components'
-// import Title from '../components/Title'
-// import IncomeExpense from '../components/Expense'
-// import NewTransaction from '../components/NewTransaction'
 import Gasto from '../components/Gasto'
 import Search from '../components/LeftNav/Search'
 import Book from '../components/LeftNav/Book'
-
 
 const MainPage = () => {
 	const [theme, themeToggler, mountedComponent] = useDarkMode()
@@ -36,14 +32,11 @@ const MainPage = () => {
 						<DarkModeToggle theme={theme} toggleTheme={themeToggler} />
 					</Header>
 					<LeftNav>
-						<Search/>
-						<Book/>
+						<Search />
+						<Book />
 					</LeftNav>
 					<MyContainer>
-					{/* <Title/>
-					<NewTransaction/>
-					<IncomeExpense/> */}
-					<Gasto/>
+						<Gasto />
 					</MyContainer>
 				</Main>
 			</ThemeProvider>

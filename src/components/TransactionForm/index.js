@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { uniqueId } from '../../utils'
+import { uniqueId } from '../../utils/math'
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns'
 import Grid from '@material-ui/core/Grid'
@@ -102,7 +102,6 @@ const Index = ({ onNewTransaction }) => {
 				hr -= 12
 				ampm = 'PM'
 			}
-
 
 			if (hr === 0) {
 				hr = 12
@@ -222,6 +221,7 @@ const Index = ({ onNewTransaction }) => {
 								<DatePickerContainerFlex>
 									<DatePickerContainer>
 										<DatePicker
+											className='datePicker'
 											variant='inline'
 											autoOk
 											inputVariant='outlined'
@@ -235,6 +235,7 @@ const Index = ({ onNewTransaction }) => {
 
 									<DatePickerContainer>
 										<TimePicker
+											className='datePicker'
 											variant='inline'
 											autoOk
 											inputVariant='outlined'

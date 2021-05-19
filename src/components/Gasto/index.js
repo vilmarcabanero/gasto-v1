@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import Expense from '../Expense'
 import TransactionHistory from '../TransactionHistory'
 import TransactionForm from '../TransactionForm'
@@ -29,7 +28,6 @@ const Gasto = () => {
 
 		setIncome(income)
 		setExpense(expense)
-		
 	}
 
 	const handleAddNewTransaction = item => {
@@ -48,11 +46,11 @@ const Gasto = () => {
 			setTransactions(localState)
 		} else {
 			calculateExpenses()
-		}
+		} // eslint-disable-next-line
 	}, [])
 
 	useEffect(() => {
-		calculateExpenses()
+		calculateExpenses() // eslint-disable-next-line
 	}, [transactions])
 
 	return (

@@ -1,0 +1,8 @@
+
+/* para sa datepicker? ng material ui*/
+input[type='text'],
+input[type='number'] {
+	padding: 11.5px;
+}
+
+
