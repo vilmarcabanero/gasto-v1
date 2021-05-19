@@ -1,22 +1,15 @@
-import React from 'react'
-import { MainContainer } from './index.style'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Container from '@material-ui/core/Container'
+import { StyledContainer } from './index.style'
+import { Container } from '@material-ui/core'
 
-const Main = props => {
+const MyContainer = (props) => {
 	return (
-		<MainContainer>
-			<React.Fragment>
-				<CssBaseline />
-				<Container
-					maxWidth='lg'
-					style={{ position: 'relative', height: '100vh' }}
-				>
+		
+			<Container>
+				<StyledContainer>
 					{props.children}
-				</Container>
-			</React.Fragment>
-		</MainContainer>
+				</StyledContainer>
+			</Container>
 	)
 }
 
-export default Main
+export default MyContainer

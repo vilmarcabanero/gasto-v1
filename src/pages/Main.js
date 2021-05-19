@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import Main from '../containers/Main'
+import Container from '../containers/Container'
 import LeftNav from '../containers/LeftNav'
 import Header from '../containers/Header'
-import MyContainer from '../containers/MyContainer'
+import Main from '../containers/Main'
 import Background from '../containers/Background'
 import DarkModeToggle from '../components/DarkModeToggle'
-import { useDarkMode } from '../components/DarkMode/useDarkMode'
-import { lightTheme, darkTheme } from '../components/DarkMode/Themes'
+import { useDarkMode } from '../utils/DarkMode/useDarkMode'
+import { lightTheme, darkTheme } from '../utils/DarkMode/themes'
 import { ThemeProvider } from 'styled-components'
 // import Title from '../components/Title'
 // import IncomeExpense from '../components/Expense'
@@ -29,7 +29,7 @@ const MainPage = () => {
 			transition={{ duration: 0.5 }}
 		>
 			<ThemeProvider theme={themeMode}>
-				<Main>
+				<Container>
 					<Background />
 					<Header>
 						<h1>Gasto</h1>
@@ -39,13 +39,13 @@ const MainPage = () => {
 						<Search/>
 						<Book/>
 					</LeftNav>
-					<MyContainer>
+					<Main>
 					{/* <Title/>
 					<NewTransaction/>
 					<IncomeExpense/> */}
 					<Gasto/>
-					</MyContainer>
-				</Main>
+					</Main>
+				</Container>
 			</ThemeProvider>
 		</motion.div>
 	)

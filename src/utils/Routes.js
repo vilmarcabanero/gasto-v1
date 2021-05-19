@@ -3,7 +3,7 @@ import { Switch, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
 // Pages
-import Main from './pages/Main'
+import Main from '../pages/Main'
 // import LoginPage from './pages/Login'
 // import RegisterPage from './pages/Register'
 
