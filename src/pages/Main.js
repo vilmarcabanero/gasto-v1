@@ -8,9 +8,6 @@ import DarkModeToggle from '../components/DarkModeToggle'
 import { useDarkMode } from '../utils/DarkMode/useDarkMode'
 import { lightTheme, darkTheme } from '../utils/DarkMode/themes'
 import { ThemeProvider } from 'styled-components'
-// import Title from '../components/Title'
-// import IncomeExpense from '../components/Expense'
-// import NewTransaction from '../components/NewTransaction'
 import Gasto from '../components/Gasto'
 import Search from '../components/LeftNav/Search'
 import Book from '../components/LeftNav/Book'
@@ -40,9 +37,6 @@ const MainPage = () => {
 						<Book/>
 					</LeftNav>
 					<Main>
-					{/* <Title/>
-					<NewTransaction/>
-					<IncomeExpense/> */}
 					<Gasto/>
 					</Main>
 				</Container>
