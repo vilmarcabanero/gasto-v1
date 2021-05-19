@@ -19,6 +19,6 @@ p, span, a, div {
   font-family: 'DM Sans', sans-serif;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
+/* ::-webkit-scrollbar {
+  width: 0;
+} */

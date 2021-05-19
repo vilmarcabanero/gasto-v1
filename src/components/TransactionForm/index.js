@@ -97,10 +97,12 @@ const Index = ({ onNewTransaction }) => {
 			}
 
 			let ampm = 'AM'
-			if (hr > 12) {
+
+			if (hr >= 12) {
 				hr -= 12
 				ampm = 'PM'
 			}
+
 
 			if (hr === 0) {
 				hr = 12
