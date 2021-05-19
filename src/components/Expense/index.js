@@ -10,7 +10,22 @@ import {
 	MinusIcon,
 	EqualsIcon,
 } from './index.style'
-import { moneyFormatter } from '../../utils/math'
+
+//Money formatter function
+const moneyFormatter = num => {
+	let p = num.toFixed(2).split('.')
+	return (
+		'₱ ' +
+		p[0]
+			.split('')
+			.reverse()
+			.reduce(function (acc, num, i, orig) {
+				return num === '-' ? acc : num + (i && !(i % 3) ? ',' : '') + acc
+			}, '') +
+		'.' +
+		p[1]
+	)
+}
 
 const Index = ({ income, expense }) => {
 	return (

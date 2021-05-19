@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-import Expense from '../Expense'
-import TransactionHistory from '../TransactionHistory'
-import TransactionForm from '../TransactionForm'
+import Expense from './Expense'
+import TransactionHistory from './TransactionHistory'
+import TransactionForm from './TransactionForm'
 
-const Gasto = () => {
+import { uniqueId } from '../../utils'
+
+// Aggregator component/container component
+
+const transactionData = []
+
+function ExpenseTracker() {
 	const [income, setIncome] = useState(0)
 	const [expense, setExpense] = useState(0)
 	const [transactions, setTransactions] = useState([])
@@ -29,16 +35,15 @@ const Gasto = () => {
 
 		setIncome(income)
 		setExpense(expense)
-		
 	}
 
 	const handleAddNewTransaction = item => {
-		let newTransactions = [item, ...transactions]
+		let newTransactions = [...transactions, item]
 		setTransactions(newTransactions)
 	}
 
 	const handleDeleteTransaction = id => {
-		const newTransactions = transactions.filter(item => item.id !== id)
+		const newTransactions = transactions.filter(item => item.id != id)
 		setTransactions(newTransactions)
 	}
 
@@ -57,17 +62,15 @@ const Gasto = () => {
 
 	return (
 		<div>
-			<h1>Vil</h1>
-			<TransactionForm onNewTransaction={handleAddNewTransaction} />
+			<h1>Expense Tracker</h1>
 			<Expense income={income} expense={expense} />
 			<TransactionHistory
-				income={income}
-				expense={expense}
 				transactions={transactions}
 				onDeleteTransaction={handleDeleteTransaction}
 			/>
+			<TransactionForm onNewTransaction={handleAddNewTransaction} />
 		</div>
 	)
 }
 
-export default Gasto
+export default ExpenseTracker

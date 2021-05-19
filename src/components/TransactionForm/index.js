@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { uniqueId } from '../../utils/math'
+import { uniqueId } from '../../utils'
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns'
 import Grid from '@material-ui/core/Grid'
