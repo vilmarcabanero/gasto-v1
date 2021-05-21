@@ -2,7 +2,7 @@ import React from 'react'
 import { StylesProvider } from '@material-ui/core/styles'
 import * as S from './index.style'
 
-import { moneyFormatter } from './helpers'
+import { moneyFormatter } from 'utils/math'
 
 const TransactionHistory = ({ transactions, onDeleteTransaction }) => {
 	return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Expense from '../Expense'
-import TransactionHistory from '../TransactionHistory'
-import TransactionForm from '../TransactionForm'
+import Expense from 'components/Expense'
+import TransactionHistory from 'components/TransactionHistory'
+import TransactionForm from 'components/TransactionForm'
 
 const Gasto = () => {
 	const [income, setIncome] = useState(0)
