@@ -5,12 +5,12 @@ export const Container = styled.table`
 	width: 100%;
 	position: relative;
 
-	.income {
+	#income {
 		color: ${props => props.theme.incomeText};
 		font-weight: 500;
 	}
 
-	.expense {
+	#expense {
 		color: ${props => props.theme.expenseText};
 		font-weight: 500;
 	}

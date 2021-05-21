@@ -1,7 +1,7 @@
 export const lightTheme = {
 	body: '#FFF',
 	text: '#2c324b',
-	incomeText: '#rab98d',
+	incomeText: '#3ab98d',
 	expenseText: '#cb4545',
 	toggleBorder: '#FFF',
 	background: 'linear-gradient(#39598A, #79D7ED)',

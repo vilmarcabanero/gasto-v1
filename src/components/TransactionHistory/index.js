@@ -21,7 +21,7 @@ const TransactionHistory = ({ transactions, onDeleteTransaction }) => {
 						<S.Data>{data.date}</S.Data>
 						<S.Data>{data.time}</S.Data>
 						<S.Data>{data.name}</S.Data>
-						<S.Data className={data.type === 'expense' ? 'expense' : 'income'}>
+						<S.Data id={data.type === 'expense' ? 'expense' : 'income'}>
 							{moneyFormatter(data.amount)}
 						</S.Data>
 
