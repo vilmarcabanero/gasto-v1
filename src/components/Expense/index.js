@@ -1,15 +1,4 @@
-import React from 'react'
-import {
-	Container,
-	IncomeContainer,
-	ExpenseContainer,
-	Title,
-	Amount,
-	BalanceContainer,
-	PlusIcon,
-	MinusIcon,
-	EqualsIcon,
-} from './index.style'
+import * as S from './index.style'
 
 //Money formatter function
 const moneyFormatter = num => {
@@ -29,34 +18,34 @@ const moneyFormatter = num => {
 
 const Index = ({ income, expense }) => {
 	return (
-		<Container>
-			<IncomeContainer>
-				<Title>
-					<PlusIcon />
+		<S.Container>
+			<S.IncomeContainer>
+				<S.Title>
+					<S.PlusIcon />
 					Cash In
-				</Title>
+				</S.Title>
 
-				<Amount>{moneyFormatter(income)} </Amount>
-			</IncomeContainer>
-			<ExpenseContainer>
-				<Title>
-					<MinusIcon />
+				<S.Amount>{moneyFormatter(income)} </S.Amount>
+			</S.IncomeContainer>
+			<S.ExpenseContainer>
+				<S.Title>
+					<S.MinusIcon />
 					Cash out
-				</Title>
-				<Amount> {moneyFormatter(expense)} </Amount>
-			</ExpenseContainer>
-			<BalanceContainer>
-				<Title>
-					<EqualsIcon />
+				</S.Title>
+				<S.Amount> {moneyFormatter(expense)} </S.Amount>
+			</S.ExpenseContainer>
+			<S.BalanceContainer>
+				<S.Title>
+					<S.EqualsIcon />
 					Balance
-				</Title>
-				<Amount>
+				</S.Title>
+				<S.Amount>
 					{income - expense < 0
 						? `- ${moneyFormatter(income - expense)}`
 						: moneyFormatter(income - expense)}
-				</Amount>
-			</BalanceContainer>
-		</Container>
+				</S.Amount>
+			</S.BalanceContainer>
+		</S.Container>
 	)
 }
 

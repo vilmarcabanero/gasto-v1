@@ -3,37 +3,14 @@ import { uniqueId } from '../../utils/math'
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns'
 import Grid from '@material-ui/core/Grid'
-import {
-	MuiPickersUtilsProvider,
-	DatePicker,
-	TimePicker,
-} from '@material-ui/pickers'
+import * as MuiPickers from '@material-ui/pickers'
 //Dialog
 import { withStyles } from '@material-ui/core/styles'
-import {
-	Dialog,
-	DialogTitle,
-	DialogContent,
-	IconButton,
-	Typography,
-	Button,
-} from '@material-ui/core'
-import { Close, Add, Remove, PhotoCamera } from '@material-ui/icons'
+import * as Mui from '@material-ui/core'
+import * as MuiIcon from '@material-ui/icons'
 import { StylesProvider } from '@material-ui/core/styles'
-import {
-	SearchButtonContainer,
-	SearchBar,
-	DatePickerContainerFlex,
-	DatePickerContainer,
-	DatePickerPlaceholder,
-	StyledButton,
-	CashInButton,
-	CashOutButton,
-	Form,
-	Label,
-	Input,
-	Placeholder,
-} from './index.style'
+import * as S from './index.style'
+
 const styles = theme => ({
 	root: {
 		margin: 0,
@@ -50,18 +27,18 @@ const styles = theme => ({
 const MuiDialogTitle = withStyles(styles)(props => {
 	const { children, classes, onClose, ...other } = props
 	return (
-		<DialogTitle disableTypography className={classes.root} {...other}>
-			<Typography variant='h6'>{children}</Typography>
+		<Mui.DialogTitle disableTypography className={classes.root} {...other}>
+			<Mui.Typography variant='h6'>{children}</Mui.Typography>
 			{onClose ? (
-				<IconButton
+				<Mui.IconButton
 					aria-label='close'
 					className={classes.closeButton}
 					onClick={onClose}
 				>
-					<Close />
-				</IconButton>
+					<MuiIcon.Close />
+				</Mui.IconButton>
 			) : null}
-		</DialogTitle>
+		</Mui.DialogTitle>
 	)
 })
 
@@ -69,7 +46,7 @@ const MuiDialogContent = withStyles(theme => ({
 	root: {
 		padding: theme.spacing(2),
 	},
-}))(DialogContent)
+}))(Mui.DialogContent)
 
 const Index = ({ onNewTransaction }) => {
 	const [enteredDate, setEnteredDate] = useState(new Date())
@@ -200,12 +177,14 @@ const Index = ({ onNewTransaction }) => {
 
 	return (
 		<StylesProvider injectFirst>
-			<SearchButtonContainer>
-				<SearchBar placeholder='Search by remarks' />
-				<StyledButton onClick={handleClickOpen}>New Transaction</StyledButton>
-			</SearchButtonContainer>
+			<S.SearchButtonContainer>
+				<S.SearchBar placeholder='Search by remarks' />
+				<S.StyledButton onClick={handleClickOpen}>
+					New Transaction
+				</S.StyledButton>
+			</S.SearchButtonContainer>
 
-			<Dialog
+			<Mui.Dialog
 				onClose={handleClose}
 				aria-labelledby='customized-dialog-title'
 				open={open}
@@ -215,12 +194,12 @@ const Index = ({ onNewTransaction }) => {
 					New Transaction
 				</MuiDialogTitle>
 				<MuiDialogContent dividers>
-					<Form>
-						<MuiPickersUtilsProvider utils={DateFnsUtils}>
+					<S.Form>
+						<MuiPickers.MuiPickersUtilsProvider utils={DateFnsUtils}>
 							<Grid container justify='space-around'>
-								<DatePickerContainerFlex>
-									<DatePickerContainer>
-										<DatePicker
+								<S.DatePickerContainerFlex>
+									<S.DatePickerContainer>
+										<MuiPickers.DatePicker
 											className='datePicker'
 											variant='inline'
 											autoOk
@@ -230,11 +209,11 @@ const Index = ({ onNewTransaction }) => {
 											required
 											style={{ width: '99.5%' }}
 										/>
-										<DatePickerPlaceholder>Date</DatePickerPlaceholder>
-									</DatePickerContainer>
+										<S.DatePickerPlaceholder>Date</S.DatePickerPlaceholder>
+									</S.DatePickerContainer>
 
-									<DatePickerContainer>
-										<TimePicker
+									<S.DatePickerContainer>
+										<MuiPickers.TimePicker
 											className='datePicker'
 											variant='inline'
 											autoOk
@@ -244,13 +223,13 @@ const Index = ({ onNewTransaction }) => {
 											required
 											style={{ width: '99.5%' }}
 										/>
-										<DatePickerPlaceholder>Time</DatePickerPlaceholder>
-									</DatePickerContainer>
-								</DatePickerContainerFlex>
+										<S.DatePickerPlaceholder>Time</S.DatePickerPlaceholder>
+									</S.DatePickerContainer>
+								</S.DatePickerContainerFlex>
 							</Grid>
-						</MuiPickersUtilsProvider>
-						<Label>
-							<Input
+						</MuiPickers.MuiPickersUtilsProvider>
+						<S.Label>
+							<S.Input
 								type='number'
 								placeholder='Enter amount'
 								min='0.01'
@@ -259,49 +238,49 @@ const Index = ({ onNewTransaction }) => {
 								onChange={amountChangeHandler}
 								required
 							/>
-							<Placeholder>Amount</Placeholder>
-						</Label>
+							<S.Placeholder>Amount</S.Placeholder>
+						</S.Label>
 
-						<Label>
-							<Input
+						<S.Label>
+							<S.Input
 								type='text'
 								placeholder='Enter details (Name, Bill No, Item Name, Quantity etc.)'
 								value={nameValue}
 								onChange={nameChangeHandler}
 								required
 							/>
-							<Placeholder>Remarks</Placeholder>
-						</Label>
-						<Label>
-							<Button variant='outlined'>
+							<S.Placeholder>Remarks</S.Placeholder>
+						</S.Label>
+						<S.Label>
+							<Mui.Button variant='outlined'>
 								{' '}
-								<PhotoCamera />
+								<MuiIcon.PhotoCamera />
 								Attach Bill
-							</Button>
-						</Label>
-					</Form>
+							</Mui.Button>
+						</S.Label>
+					</S.Form>
 				</MuiDialogContent>
-				<DialogContent>
+				<Mui.DialogContent>
 					<Grid container justify='space-around'>
-						<CashInButton
+						<S.CashInButton
 							style={{ width: '51%' }}
 							id='cashin-button'
 							onClick={cashInHandler}
 							type='submit'
 						>
-							<Add /> Cash in
-						</CashInButton>
-						<CashOutButton
+							<MuiIcon.Add /> Cash in
+						</S.CashInButton>
+						<S.CashOutButton
 							style={{ width: '51%' }}
 							id='cashout-button'
 							onClick={cashOutHandler}
 							type='submit'
 						>
-							<Remove /> Cash out
-						</CashOutButton>
+							<MuiIcon.Remove /> Cash out
+						</S.CashOutButton>
 					</Grid>
-				</DialogContent>
-			</Dialog>
+				</Mui.DialogContent>
+			</Mui.Dialog>
 		</StylesProvider>
 	)
 }

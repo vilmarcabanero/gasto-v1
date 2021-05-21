@@ -1,55 +1,46 @@
 import React from 'react'
 import { StylesProvider } from '@material-ui/core/styles'
+import * as S from './index.style'
 
-import {
-	Container,
-	HeaderRow,
-	HeaderCells,
-	BodyRow,
-	Data,
-	IconContainer,
-	DeleteIcon,
-	EditIcon,
-} from './index.style'
 import { moneyFormatter } from './helpers'
 
 const TransactionHistory = ({ transactions, onDeleteTransaction }) => {
 	return (
 		<StylesProvider injectFirst>
-			<Container>
-				<HeaderRow>
-					<HeaderCells> Date </HeaderCells>
-					<HeaderCells> Time </HeaderCells>
-					<HeaderCells> Remark </HeaderCells>
-					<HeaderCells> Amount </HeaderCells>
-					<HeaderCells> </HeaderCells>
-					<HeaderCells> </HeaderCells>
-				</HeaderRow>
+			<S.Container>
+				<S.HeaderRow>
+					<S.HeaderCells> Date </S.HeaderCells>
+					<S.HeaderCells> Time </S.HeaderCells>
+					<S.HeaderCells> Remark </S.HeaderCells>
+					<S.HeaderCells> Amount </S.HeaderCells>
+					<S.HeaderCells> </S.HeaderCells>
+					<S.HeaderCells> </S.HeaderCells>
+				</S.HeaderRow>
 				{transactions.map(data => (
-					<BodyRow key={data.id}>
-						<Data>{data.date}</Data>
-						<Data>{data.time}</Data>
-						<Data>{data.name}</Data>
-						<Data className={data.type === 'expense' ? 'expense' : 'income'}>
+					<S.BodyRow key={data.id}>
+						<S.Data>{data.date}</S.Data>
+						<S.Data>{data.time}</S.Data>
+						<S.Data>{data.name}</S.Data>
+						<S.Data className={data.type === 'expense' ? 'expense' : 'income'}>
 							{moneyFormatter(data.amount)}
-						</Data>
+						</S.Data>
 
-						<Data>
-							<IconContainer className='hide'>
-								<EditIcon />
-							</IconContainer>
-						</Data>
-						<Data>
-							<IconContainer
+						<S.Data>
+							<S.IconContainer className='hide'>
+								<S.EditIcon />
+							</S.IconContainer>
+						</S.Data>
+						<S.Data>
+							<S.IconContainer
 								className='hide'
 								onClick={() => onDeleteTransaction(data.id)}
 							>
-								<DeleteIcon />
-							</IconContainer>
-						</Data>
-					</BodyRow>
+								<S.DeleteIcon />
+							</S.IconContainer>
+						</S.Data>
+					</S.BodyRow>
 				))}
-			</Container>
+			</S.Container>
 		</StylesProvider>
 	)
 }

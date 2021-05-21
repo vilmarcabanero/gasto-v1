@@ -1,15 +1,14 @@
-import React from 'react'
-import {Container, AddBookContainer, AddBookIcon, Search} from './index.style'
+import * as S from './index.style'
 
 const Index = () => {
-  return (
-    <Container>
-      <Search placeholder='Search book'/>
-      <AddBookContainer>
-        <AddBookIcon/>
-      </AddBookContainer>
-    </Container>
-  )
+	return (
+		<S.Container>
+			<S.Search placeholder='Search book' />
+			<S.AddBookContainer>
+				<S.AddBookIcon />
+			</S.AddBookContainer>
+		</S.Container>
+	)
 }
 
 export default Index
