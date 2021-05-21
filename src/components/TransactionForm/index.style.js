@@ -63,21 +63,25 @@ export const StyledButton = styled(Button)`
 
 export const CashInButton = styled(Button)`
 	background-color: #3ab98d;
-	border-color: #3ab98d;
 	color: white;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 	margin-left: -1em;
+	&:hover {
+		background-color: #3ab98d;
+	}
 `
 
 export const CashOutButton = styled(Button)`
 	background-color: #cb4545;
-	border-color: #cb4545;
 	color: white;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 	width: 100%;
 	margin-right: -1rem;
+	&:hover {
+		background-color: #cb4545;
+	}
 `
 
 export const Form = styled.form``
@@ -88,7 +92,7 @@ export const Label = styled.label`
 	margin: 10px 0;
 	padding-top: 1rem;
 	transition: all 0.5s ease;
-	display: inline-block; //heto solution. 
+	display: inline-block; //heto solution.
 	&:hover {
 		cursor: text;
 	}

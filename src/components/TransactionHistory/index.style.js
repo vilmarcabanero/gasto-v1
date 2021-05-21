@@ -28,7 +28,7 @@ export const HeaderRow = styled.div`
 	background-color: ${props => props.theme.highlightColor};
 	color: ${props => props.theme.text};
 	text-align: left;
-	font-weight: bold;
+	font-weight: 500;
 	font-size: 16px;
 	position: sticky;
 	top: -1rem;
