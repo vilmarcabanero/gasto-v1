@@ -55,7 +55,7 @@ const Gasto = () => {
 
 	return (
 		<div>
-			<h1>Vil</h1>
+			<h1>Book 1</h1>
 			<TransactionForm onNewTransaction={handleAddNewTransaction} />
 			<Expense income={income} expense={expense} />
 			<TransactionHistory

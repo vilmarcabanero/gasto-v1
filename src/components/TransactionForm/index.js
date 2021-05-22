@@ -8,7 +8,7 @@ import * as MuiPickers from '@material-ui/pickers'
 import { withStyles } from '@material-ui/core/styles'
 import * as Mui from '@material-ui/core'
 import * as MuiIcon from '@material-ui/icons'
-import { StylesProvider } from '@material-ui/core/styles'
+import StylesProvider from "@material-ui/styles/StylesProvider";
 import * as S from './index.style'
 
 const styles = theme => ({

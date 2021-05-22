@@ -8,7 +8,7 @@ const Index = () => {
 					<S.BookIcon />
 				</S.BookIconContainer>
 				<S.BookContainer>
-					<S.Title>Vil</S.Title>
+					<S.Title>Book 1</S.Title>
 					<S.DateCreated>Created at 05/18/2021</S.DateCreated>
 				</S.BookContainer>
 			</S.Container>
